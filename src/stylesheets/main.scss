@@ -1,1 +1,262 @@
 // Your styles go here
+
+html{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin: 4% 12%;
+    background-color: white;
+    display: flex;
+}
+
+*, ::after, ::before{
+    box-sizing: inherit;
+}
+
+header{
+    border-bottom: 1px solid black;
+}
+
+header > h1{
+    font-size: 2rem;
+    color: black;
+    font-weight: bolder;
+}
+
+header > h1 > form{
+    float: right;
+   
+}
+
+.menu {
+    background-color: lightgray;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    text-align: center;
+
+}
+
+.menu > li {
+    list-style: none;
+    display: inline;
+    margin-right: 5px;
+    text-align: center;
+    padding-left: .5rem;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.menu > li:not(:last-child)::after{
+    content: '|';
+    margin-left: 5px;
+    color: black;
+}
+
+a:link{
+    text-decoration: none;
+    
+}
+
+button{
+    background-color: lightgrey;
+}
+
+.left{
+    flex-direction: column;
+    display: flex;
+}
+
+.left > .top > .words > h1{
+    font-size: 1.5 rem;
+    color: black;
+}
+
+.left > .bottom > .words > h1{
+    font-size: 1.5 rem;
+    color: black;
+}
+
+/* image section */
+.top > img{
+    border-radius: 8px;
+    margin-right: .8rem;
+}
+
+.bottom > img{
+    border-radius: 8px;
+    margin-right: .8rem;
+}
+
+.top{
+   border-bottom: 1px solid black;
+}
+
+.bottom{
+    border-bottom: 1px solid black;
+}
+
+
+.switch{
+    list-style: none;
+    display: inline;
+    margin-right: 5px;
+    text-align: center;
+    padding-left: .5rem;
+    font-size: 1.5rem;
+    color: black;
+    
+}
+
+.switch > ul li{
+    display: inline;
+
+    
+}
+
+.switch > ul li a{
+    background-color: lightgray;
+    border-radius: 8px;
+    margin-right: .8rem;
+    font-size: 20px;
+    color: black;
+    margin-left: 1rem;
+    padding: 1em;
+    border-radius: 1em;
+    
+
+}
+
+.footer{
+    background-color: lightgray;
+}
+
+.footer > .footer1 > p{
+    text-align: right;
+    margin-top: 3px;
+   
+}
+
+.footer > .footer2{
+    background-color: lightgray;
+    list-style: none;
+    display: inline;
+    text-align: left;
+    color: black;
+
+}
+
+.footer > .footer2 > ul li{
+    display: inline;
+    color: black;
+}
+
+/* desktop view */
+@media screen and (min-width: 576px) {
+
+    main{
+        margin: 4%;                    /* adjust margin for smaller screens */
+    }
+
+    header > h1 {
+        text-align: center;
+    }
+
+    .menu{
+        text-align: center;
+    }
+   
+    .left > .top > .words > h1,
+    .left > .bottom > .words > h1 {
+        text-align: center;            /* Center the heading in the left section on smaller screens */
+    }
+
+    .top > img,
+    .bottom > img {
+        width: 100%;
+    }
+
+    .footer > .footer1 > p{
+        text-align: center;
+    }
+
+    .footer > .footer2{
+        text-align: center;
+    }
+
+}
+
+/* mobile screens */
+@media screen and (max-width: 575px) {
+
+    /* Hide the search form on smaller screens */
+    header > h1 > form {
+        display: none;
+    }
+
+    /* Show the mobile menu on smaller screens */
+    .menu {
+        /*
+        display: block;
+        text-align: center;
+        background-color: lightgray;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        */
+        overflow: hidden;
+        background-color: white;
+        position: relative;
+
+    }
+
+    /* style the navigation menu links */
+    .menu > li a{
+    /*
+        list-style: none;
+        display: none;
+        margin-bottom: 10px;
+        text-align: center;
+        padding-left: 0.5rem;
+        font-size: 1.5rem;
+        color: black;
+    */
+       color: black;
+       padding: 14px 16px;
+       text-decoration: none;
+       font-size: 17px;
+       display: none;
+    }
+
+    /* style the hamburger menu */
+    .menu > a.icon {
+        background-color: lightgray;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* adding a green background color on mouse-over */
+    .menu > a:hover{
+        background-color: green;
+        color: black;
+    }
+
+    
+    .menu > li:not(:last-child)::after {
+       content: none
+    }
+    
+
+
+}
+
+
+
