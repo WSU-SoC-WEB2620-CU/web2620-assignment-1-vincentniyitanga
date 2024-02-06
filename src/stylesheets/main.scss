@@ -21,20 +21,23 @@ main{
     box-sizing: inherit;
 }
 
-header{
-    border-bottom: 1px solid black;
-}
 
 header > h1{
     font-size: 2rem;
     color: black;
     font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 header > h1 > form{
-    float: right;
-   
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
+
 
 .menu {
     background-color: lightgray;
@@ -95,9 +98,7 @@ button{
     margin-right: .8rem;
 }
 
-.top{
-   border-bottom: 1px solid black;
-}
+
 
 .bottom{
     border-bottom: 1px solid black;
@@ -165,13 +166,38 @@ button{
         margin: 4%;                    /* adjust margin for smaller screens */
     }
 
+    header{
+        border-bottom: 5px solid black;
+    }
+
     header > h1 {
-        text-align: center;
+        text-align: right;
+    }
+
+    header > h1 > form{
+        float: right;
+       
+    }  
+
+    .dropdown{
+        display: none;
     }
 
     .menu{
         text-align: center;
     }
+
+    .top{
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+     }
+
+     .bottom{
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+     }
    
     .left > .top > .words > h1,
     .left > .bottom > .words > h1 {
@@ -196,37 +222,65 @@ button{
 /* mobile screens */
 @media screen and (max-width: 575px) {
 
+  
+    header{
+       margin-left: auto;
+    }
+
     /* Hide the search form on smaller screens */
     header > h1 > form {
         display: none;
     }
 
+    .dropdown{
+        display: inline-block;
+        position: relative;
+    }
+    
+    .dropdown-options{
+        display: none;
+        position: absolute;
+        overflow: auto;
+    }
+
+    .dropdown-options a{
+        color: black;
+        font-size: 10px;
+        
+        
+    }
+    
+    .dropdown:hover .dropdown-options{
+        display: block;
+    }
+
+
     /* Show the mobile menu on smaller screens */
     .menu {
-        /*
+        
         display: block;
         text-align: center;
         background-color: lightgray;
         padding-top: 0.3rem;
         padding-bottom: 0.3rem;
-        */
-        overflow: hidden;
-        background-color: white;
-        position: relative;
+        
+      
 
+    }
+
+    .top{
+        border-bottom: 2px solid black;
+        margin-bottom: 15px;
+    }
+
+    .bottom{
+        border-bottom: 2px solid black;
+        margin-bottom: 15px;
     }
 
     /* style the navigation menu links */
     .menu > li a{
-    /*
-        list-style: none;
-        display: none;
-        margin-bottom: 10px;
-        text-align: center;
-        padding-left: 0.5rem;
-        font-size: 1.5rem;
-        color: black;
-    */
+
        color: black;
        padding: 14px 16px;
        text-decoration: none;
@@ -234,20 +288,6 @@ button{
        display: none;
     }
 
-    /* style the hamburger menu */
-    .menu > a.icon {
-        background-color: lightgray;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    /* adding a green background color on mouse-over */
-    .menu > a:hover{
-        background-color: green;
-        color: black;
-    }
 
     
     .menu > li:not(:last-child)::after {
